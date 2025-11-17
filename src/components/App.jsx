@@ -15,6 +15,13 @@ function App() {
   }, []);
 
   function onAddToCart(id, amount) {
+    const cartItem = cart.find((item) => item.id == id);
+    if (cartItem !== undefined) {
+      const cartCopy = cart;
+      cart.find((item) => item.id == id).amount += amount;
+      setCart(cartCopy);
+      return;
+    }
     setCart([...cart, { id: id, amount: amount }]);
     console.log(cart);
   }
