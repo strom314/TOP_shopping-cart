@@ -1,3 +1,11 @@
+import Card from "./Card";
+
 export default function Shop() {
-  return <h1>Shop</h1>;
+  return (
+    <>
+      <h1>Shop</h1>
+      <Card />
+      <Card />
+    </>
+  );
 }
