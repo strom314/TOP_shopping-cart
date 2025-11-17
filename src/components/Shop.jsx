@@ -1,17 +1,9 @@
 import Card from "./Card";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router";
 
 export default function Shop() {
-  const [products, setProducts] = useState(null);
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setProducts(data);
-      });
-  }, []);
+  const {products} = useOutletContext();
 
   return (
     <>
@@ -24,6 +16,8 @@ export default function Shop() {
               title={product.title}
               rating={product.rating.rate}
               price={product.price}
+              id={product.id}
+              key={product.id}
             />
           );
         })}

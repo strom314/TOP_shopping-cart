@@ -9,7 +9,7 @@ import {
 import routes from "./Router.jsx";
 
 const router = createBrowserRouter(routes);
-<App />
+{/* <App /> */}
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />

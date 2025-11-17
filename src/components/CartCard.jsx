@@ -1,9 +1,13 @@
 import { useState } from "react";
-import { useOutletContext } from "react-router";
 
-export default function Card({ imgSrc, title, rating, price, id }) {
-  const [amount, setAmount] = useState(1);
-  const { onAddToCart } = useOutletContext();
+export default function CartCard({
+  imgSrc,
+  title,
+  rating,
+  price,
+  currentAmount,
+}) {
+  const [amount, setAmount] = useState(currentAmount);
 
   function handleInput(e) {
     setAmount(Number(e.target.value));
@@ -17,6 +21,8 @@ export default function Card({ imgSrc, title, rating, price, id }) {
     }
   }
 
+  console.log(rating);
+
   return (
     <div>
       <img src={imgSrc} alt={title + " image"} />
@@ -29,13 +35,6 @@ export default function Card({ imgSrc, title, rating, price, id }) {
       <button onClick={handleMinus}>-</button>
       <input type="number" value={amount} onInput={handleInput} />
       <button onClick={handlePlus}>+</button>
-      <button
-        onClick={() => {
-          onAddToCart(id, amount);
-        }}
-      >
-        add to cart
-      </button>
     </div>
   );
 }
