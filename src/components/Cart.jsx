@@ -2,8 +2,13 @@ import { useOutletContext } from "react-router";
 import CartCard from "./CartCard";
 
 export default function Cart() {
-  const { cart } = useOutletContext();
+  const { cart, setCart } = useOutletContext();
   const { products } = useOutletContext();
+
+  function onDelete(id) {
+    const newCart = cart.filter((item) => item.id !== id);
+    setCart(newCart);
+  }
 
   if (!cart || !products) {
     return <div>loading...</div>;
@@ -22,6 +27,8 @@ export default function Cart() {
             rating={product.rating.rate}
             price={product.price}
             currentAmount={cartItem.amount}
+            onDelete={onDelete}
+            id={cartItem.id}
           />
         );
       })}

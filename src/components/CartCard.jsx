@@ -6,6 +6,8 @@ export default function CartCard({
   rating,
   price,
   currentAmount,
+  onDelete,
+  id,
 }) {
   const [amount, setAmount] = useState(currentAmount);
 
@@ -21,8 +23,6 @@ export default function CartCard({
     }
   }
 
-  console.log(rating);
-
   return (
     <div>
       <img src={imgSrc} alt={title + " image"} />
@@ -35,6 +35,7 @@ export default function CartCard({
       <button onClick={handleMinus}>-</button>
       <input type="number" value={amount} onInput={handleInput} />
       <button onClick={handlePlus}>+</button>
+      <button onClick={() => {onDelete(id)}}>delete</button>
     </div>
   );
 }
