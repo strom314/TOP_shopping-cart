@@ -18,8 +18,10 @@ export default function CartCard({
     setAmount(Number(amount) + 1);
   }
   function handleMinus() {
-    if (amount > 0) {
+    if (amount > 1) {
       setAmount(Number(amount) - 1);
+    } else {
+      onDelete(id);
     }
   }
 
@@ -35,7 +37,13 @@ export default function CartCard({
       <button onClick={handleMinus}>-</button>
       <input type="number" value={amount} onInput={handleInput} />
       <button onClick={handlePlus}>+</button>
-      <button onClick={() => {onDelete(id)}}>delete</button>
+      <button
+        onClick={() => {
+          onDelete(id);
+        }}
+      >
+        delete
+      </button>
     </div>
   );
 }
