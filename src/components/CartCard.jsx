@@ -12,7 +12,10 @@ export default function CartCard({
   const [amount, setAmount] = useState(currentAmount);
 
   function handleInput(e) {
-    setAmount(Number(e.target.value));
+    const value = e.target.value;
+    if (value >= 0) {
+      setAmount(Number(value));
+    }
   }
   function handlePlus() {
     setAmount(Number(amount) + 1);
