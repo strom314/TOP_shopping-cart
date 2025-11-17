@@ -1,0 +1,42 @@
+:root {
+  --yellow: #f1f3e0;
+  --light-green: #d2dcb6;
+  --green: #a1bc98;
+  --dark-green: #778873;
+}
+
+.navBar {
+  background-color: var(--dark-green);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+
+  height: 80px;
+}
+.navButtonContainer {
+  display: flex;
+  gap: 20px;
+}
+.navButton {
+  text-decoration: none;
+  background-color: var(--green);
+  color: black;
+  padding: 20px 30px;
+  border-radius: 6px;
+  border: solid 2px var(--green);
+
+  font-size: 1.2rem;
+}
+.navButton:hover {
+  border: solid 2px var(--light-green);
+}
+
+.cartImg {
+  height: 60px;
+}
+.outletContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

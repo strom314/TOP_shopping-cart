@@ -1,0 +1,8 @@
+@font-face {
+  font-family: myFont;
+  src: url("https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap"); /* url of the font */
+}
+
+* {
+  font-family: myFont;
+}
