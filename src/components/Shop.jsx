@@ -1,6 +1,7 @@
 import Card from "./Card";
 // import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router";
+import styles from "./Shop.module.css";
 
 export default function Shop() {
   const { products } = useOutletContext();
@@ -8,7 +9,7 @@ export default function Shop() {
   return (
     <>
       <h1>Shop</h1>
-      <div>
+      <div className={styles.cardsContainer}>
         {products &&
           products.map((product) => {
             return (

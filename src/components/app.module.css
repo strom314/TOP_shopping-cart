@@ -27,6 +27,8 @@
   border: solid 2px var(--green);
 
   font-size: 1.2rem;
+
+  transition: 0.1s;
 }
 .navButton:hover {
   border: solid 2px var(--light-green);
@@ -34,6 +36,10 @@
 
 .cartImg {
   height: 60px;
+  transition: 0.2s;
+}
+.cartImg:hover {
+  scale: 1.1;
 }
 .outletContainer {
   display: flex;
