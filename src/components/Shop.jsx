@@ -5,7 +5,7 @@ import styles from "./Shop.module.css";
 
 export default function Shop() {
   const { products } = useOutletContext();
-
+ 
   return (
     <>
       <h1>Shop</h1>

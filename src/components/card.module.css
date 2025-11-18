@@ -1,0 +1,81 @@
+.card {
+  border: solid 2px var(--dark-green);
+  border-radius: 6px;
+  background-color: #d2dcb689;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: column;
+}
+.card img {
+  width: 100%;
+  margin-bottom: auto;
+  margin-top: auto;
+  padding-bottom: 10px;
+}
+
+.info {
+  padding: 0px 20px 20px 20px;
+}
+
+.detailsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.inputContainer {
+  display: flex;
+}
+.inputContainer input {
+  flex: 1;
+  text-align: center;
+  margin: 0px 10px;
+
+  border-radius: 6px;
+  border: var(--dark-green);
+
+  transition: 0.1s;
+}
+.inputContainer input:hover{
+    scale: 1.03;
+}
+
+.add {
+  width: 100%;
+  margin-top: 5px;
+
+  background-color: var(--green);
+  color: black;
+  padding: 5px 15px;
+  border-radius: 6px;
+  border: solid 2px var(--green);
+
+  transition: 0.1s;
+}
+.add:hover{
+    scale: 1.1;
+}
+.add:active{
+    scale: 1;
+}
+
+.button {
+  text-decoration: none;
+  background-color: var(--green);
+  color: black;
+  padding: 5px 15px;
+  border-radius: 6px;
+  border: solid 2px var(--green);
+
+  font-size: 1.2rem;
+
+  transition: 0.1s;
+}
+.button:hover {
+  scale: 1.1;
+}
+.button:active{
+    scale: 1;
+}

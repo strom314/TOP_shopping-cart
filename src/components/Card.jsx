@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useOutletContext } from "react-router";
+import styles from "./card.module.css";
 
 export default function Card({ imgSrc, title, rating, price, id }) {
   const [amount, setAmount] = useState(1);
@@ -18,24 +19,33 @@ export default function Card({ imgSrc, title, rating, price, id }) {
   }
 
   return (
-    <div>
+    <div className={styles.card}>
       <img src={imgSrc} alt={title + " image"} />
-      <ul>
-        <li>{title}</li>
-        <li>{rating}</li>
-        <li>{price}</li>
-      </ul>
 
-      <button onClick={handleMinus}>-</button>
-      <input type="number" value={amount} onInput={handleInput} />
-      <button onClick={handlePlus}>+</button>
-      <button
-        onClick={() => {
-          onAddToCart(id, amount);
-        }}
-      >
-        add to cart
-      </button>
+      <div className={styles.info}>
+        <ul>
+          <div>
+            <li>{title}</li>
+          </div>
+          <div className={styles.detailsContainer}>
+            <li>rating: {rating}</li>
+            <li>${price}</li>
+          </div>
+        </ul>
+        <div className={styles.inputContainer}>
+          <button className={styles.button} onClick={handleMinus}>-</button>
+          <input type="number" value={amount} onInput={handleInput} />
+          <button className={styles.button} onClick={handlePlus}>+</button>
+        </div>
+        <button
+          className={styles.add}
+          onClick={() => {
+            onAddToCart(id, amount);
+          }}
+        >
+          Add to cart
+        </button>
+      </div>
     </div>
   );
 }
