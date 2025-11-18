@@ -1,9 +1,10 @@
 import { useState } from "react";
+import styles from "./cartCard.module.css";
+import trash from "../assets/trash.png";
 
 export default function CartCard({
   imgSrc,
   title,
-  rating,
   price,
   currentAmount,
   onDelete,
@@ -29,23 +30,28 @@ export default function CartCard({
   }
 
   return (
-    <div>
+    <div className={styles.card}>
       <img src={imgSrc} alt={title + " image"} />
-      <ul>
-        <li>{title}</li>
-        <li>{rating}</li>
-        <li>{price}</li>
-      </ul>
 
-      <button onClick={handleMinus}>-</button>
-      <input type="number" value={amount} onInput={handleInput} />
-      <button onClick={handlePlus}>+</button>
+      <li className={styles.title}> {title}</li>
+      <li className={styles.price}>${price}</li>
+
+      <div className={styles.inputContainer}>
+        <button className={styles.button} onClick={handleMinus}>
+          -
+        </button>
+        <input type="number" value={amount} onInput={handleInput} />
+        <button className={styles.button} onClick={handlePlus}>
+          +
+        </button>
+      </div>
       <button
+        className={styles.delete}
         onClick={() => {
           onDelete(id);
         }}
       >
-        delete
+        <img src={trash} alt="delete" />
       </button>
     </div>
   );

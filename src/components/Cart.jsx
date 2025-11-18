@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router";
 import CartCard from "./CartCard";
+import styles from "./cart.module.css";
 
 export default function Cart() {
   const { cart, setCart } = useOutletContext();
@@ -17,21 +18,23 @@ export default function Cart() {
   return (
     <>
       <h1>Cart</h1>
-      {cart.map((cartItem) => {
-        const product = products.find((item) => item.id === cartItem.id);
-        return (
-          <CartCard
-            key={cartItem.id}
-            imgSrc={product.image}
-            title={product.title}
-            rating={product.rating.rate}
-            price={product.price}
-            currentAmount={cartItem.amount}
-            onDelete={onDelete}
-            id={cartItem.id}
-          />
-        );
-      })}
+      <div className={styles.cartContainer}>
+        {cart.map((cartItem) => {
+          const product = products.find((item) => item.id === cartItem.id);
+          return (
+            <CartCard
+              key={cartItem.id}
+              imgSrc={product.image}
+              title={product.title}
+              rating={product.rating.rate}
+              price={product.price}
+              currentAmount={cartItem.amount}
+              onDelete={onDelete}
+              id={cartItem.id}
+            />
+          );
+        })}
+      </div>
     </>
   );
 }
